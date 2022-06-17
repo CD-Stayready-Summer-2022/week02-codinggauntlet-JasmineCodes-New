@@ -16,8 +16,11 @@ public class Problem {
      */
 
     public static String stringCopies(String word, int n) {
-
-        return null;
+        String s = "";
+        for(int i = 0; i < n; i++) {
+            s = s + word;
+        }
+        return s;
     }
 
 
@@ -32,7 +35,6 @@ public class Problem {
      */
 
     public static Boolean followedX(String str) {
-
         return null;
     }
 
@@ -50,8 +52,18 @@ public class Problem {
      */
 
     public static Integer subTwo(String str) {
-
-        return null;
+        if (str.length() < 2) {
+            return 0;
+        }
+        String end = str.substring(str.length() -2);
+        int count = 0;
+        for(int i = 0; i < str.length() - 2; i++) {
+            String sub = str.substring(i, i + 2);
+            if(sub.equals(end)) {
+                count++;
+            }
+        }
+        return count;
     }
 
 
@@ -70,8 +82,12 @@ public class Problem {
      */
 
     public static Boolean basicNumbers123(int[] nums) {
-
-        return null;
+    for (int i = 0; i < (nums.length - 2); i++) {
+        if ((nums[i] == 1 ) && (nums[i + 1] == 2) && (nums[i + 2] == 3)) {
+            return true;
+        }
+    }
+        return false;
     }
 
 
@@ -90,8 +106,14 @@ public class Problem {
      */
 
     public static String scrambleOfLetters(String scramble) {
-
-        return null;
+        String result = "";
+        for(int i =0; i < scramble.length(); i += 4) {
+            result += scramble.charAt(i);
+            if(i + 1 < scramble.length()) {
+                result += scramble.charAt(i + 1);
+            }
+        }
+        return result;
     }
 
 
@@ -108,7 +130,11 @@ public class Problem {
      */
 
     public static Boolean dontAcceptTriples(int[] score) {
-
-        return null;
+        for(int i = 0; i < score.length - 2; i++) {
+            if (score[i] == score[i+1] && score [i] == score[i + 2]) {
+                return false;
+            }
+        }
+        return true;
     }
 }
